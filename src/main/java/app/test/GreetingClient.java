@@ -1,4 +1,4 @@
-package demo.test;
+package app.test;
 
 import model.Greeting;
 import reactor.core.publisher.Mono;

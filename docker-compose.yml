@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  app:
+    image: ${TAG_ORG}
+    environment:
+      - DT_CLUSTER_ID=${DYNATRACE_CLUSTER_ID}
+#      - DT_TENANT=
+#      - DT_TENANTTOKEN=
+#      - DT_APPLICATIONID=premsample1
+#      - DT_CONNECTION_POINT=
+#      - DT_LOGSTREAM="stdout"
+#      - DT_LOGLEVELCON="info"
+#      - DT_LOCALTOVIRTUALHOSTNAME="host_container"
+    ports:
+      - '8080:8080'

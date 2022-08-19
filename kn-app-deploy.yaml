@@ -1,0 +1,22 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: kn-$APP_NAME
+spec:
+  template:
+    metadata:
+      name: kn-$APP_NAME-v1
+      annotations:
+        #make it 1 if you don't want coldstart
+        autoscaling.knative.dev/minScale: "2"
+        autoscaling.knative.dev/maxScale: "2"
+    spec:
+      imagePullSecrets:
+        - name: $IMAGEREPO_SECRET
+      containers:
+        - image: $TAG_ORG
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DT_CLUSTER_ID
+              value: $DYNATRACE_CLUSTER_ID_OPENSHIFT

@@ -1,4 +1,4 @@
-package demo.api;
+package app.api;
 
 import model.Greeting;
 import org.springframework.http.MediaType;
