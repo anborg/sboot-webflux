@@ -7,6 +7,7 @@ mvn compile jib:dockerBuild \
   -Djib.container.user=1001:1001 \
   -Djib.to.image=$TAG_ORG
 
+
 #
 #mvn compile com.google.cloud.tools:jib-maven-plugin:2.8.0:build -Dimage=$IMG_LOCAL
 
